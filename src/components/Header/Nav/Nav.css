@@ -1,0 +1,38 @@
+.navigation{
+    width: 100%;
+    background:#f1fff1;
+    display:flex;
+    
+}
+.list{
+    list-style-type: none;
+}
+.navigation ul{
+    display: flex;
+}
+.navigation ul .navLink{
+    font-size: 20px;
+}
+  
+  
+.navigation ul a li span{
+    font-size: 20px;
+}
+.navigation ul a.active
+{
+    background:green;
+
+}
+ .navigation ul a.active li .icon-bar
+{
+    transform: translateY(-50%)
+    
+}
+           
+   
+  
+
+
+    
+  
+  

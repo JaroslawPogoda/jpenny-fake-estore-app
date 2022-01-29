@@ -1,0 +1,11 @@
+.Header{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.cart-icon{
+    top:4vh;
+    right:4vh;
+    position:absolute;
+    z-index: 1890221;
+}
