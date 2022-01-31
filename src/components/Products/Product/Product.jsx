@@ -30,7 +30,7 @@ grid-template-areas:"img title"
 grid-template-columns:9vw 1fr;
 grid-template-rows: 1fr 9vh;
 cursor:pointer;
-
+transition: 0.5s;
 &:hover{
   transition-duration: 1s, 2s;
     transform:scale(1.06);
@@ -44,6 +44,7 @@ export default function Product(props) {
   const openShowPopOut = () =>{
     setShowPopOut(!showPopOut)
   }
+  console.log(props.product)
   return (
 <Container>
 <ProductButton onClick={openShowPopOut}>

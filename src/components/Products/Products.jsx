@@ -11,14 +11,30 @@ const ButtonBack = styled(MdChevronLeft)`
 
   width: 75px;
   background: #fff;
+  transition: 0.5s;
+  &:hover{
+    
+    transform:scale(1.2);
+    transition-duration:300ms;
+  }
 `;
 const ButtonNext = styled(MdChevronRight)`
   height: 75px;
   width: 75px;
   background: #fff;
+  transition: 0.5s;
+  &:hover{
+    
+    transform:scale(1.2);
+    transition-duration:300ms;
+  }
 `;
 const ButtonContainerBack = styled.div`
   grid-area: Back;
+  &:hover{
+    color:blue;
+   
+  }
   border: 4px solid #000;
   height: 100px;
   width: 200;
@@ -26,8 +42,13 @@ const ButtonContainerBack = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.5s;
 `;
 const ButtonContainerNext = styled.div`
+  &:hover{
+    color:blue;
+   
+  }
   grid-area: Next;
   border: 4px solid #000;
   height: 100px;
@@ -36,6 +57,7 @@ const ButtonContainerNext = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.5s;
 `;
 
 

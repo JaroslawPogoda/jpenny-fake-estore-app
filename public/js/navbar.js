@@ -1,5 +1,5 @@
 //creating constant variable
-const list = document.querySelectorAll('.list')
+const list = document.querySelectorAll('.navLink')
 //creating active animation
 function activeLink(){
     list.forEach(item =>
@@ -9,7 +9,7 @@ function activeLink(){
 list.forEach(item =>
     item.addEventListener('click',activeLink))
 window.addEventListener("scroll", ()=> {
-        let navContainer = document.querySelector("header");
+        let navContainer = document.querySelector(".navigation");
         navContainer.classList.toggle("scrolling-active", window.scrollY > 1);
     });
     
