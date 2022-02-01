@@ -1,3 +1,4 @@
+
 const setCartLS = (payload) => {
     if (typeof window !== "undefined") {
       localStorage.setItem('cart', JSON.stringify(payload))
@@ -19,6 +20,7 @@ const setCartLS = (payload) => {
             element.quantity += action.payload.quantity
             itemfound = true
           }
+
         })
         if (!itemfound) {
           state = [...state, action.payload]
