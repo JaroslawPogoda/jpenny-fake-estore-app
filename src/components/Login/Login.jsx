@@ -5,7 +5,7 @@ import { CartStateContext } from "../Layout";
 import { useAuth0 } from "@auth0/auth0-react";
 import LoginAuth0Button from "./LoginAuth0Button/LoginAuth0Button";
 import LogoutAuth0Button from "./LogoutAuth0Button/LogoutAuth0Button";
-
+import './Login.css'
 export default function Register(props) {
   const value = useContext(CartStateContext);
   const valueUser = useContext(UserContext);
@@ -49,7 +49,7 @@ export default function Register(props) {
     setUser1({ ...user1, [event.target.name]: event.target.value });
   };
   return (
-    <div>
+    <div className="login">
       
       {submitted ? (
         <div>

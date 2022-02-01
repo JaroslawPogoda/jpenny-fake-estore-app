@@ -39,7 +39,7 @@ It is my understanding that some of the features should not be in front-end and 
 - fake shop API https://www.fakeshop-api.com/
 - Auth0 authentication API https://auth0.com/docs/api
 ### Screenshots
-home page
+home pag
 ![ss1](./screenshots/shot1.png)
 products page
 ![ss2](./screenshots/shot2.png)
@@ -53,3 +53,17 @@ checkout page
 ![ss6](./screenshots/shot6.png)
 cart page
 ![ss6](./screenshots/shot7.png)
+
+### Other features to be implemented:
+##### Payment system,
+##### Order System,
+##### Order Tracking System 
+##### Order Cancellation
+##### ADD paypal payment system.
+##### ADs Banner and featured items.
+##### deals pages
+##### Customer support page and contact us
+
+## By Jaroslaw Pogoda
+### Checkout my GitHub repository https://github.com/JaroslawPogoda for other projects and
+### also checkout my LinkedIn https://www.linkedin.com/in/jaroslaw-pogoda/ and lets connect.
