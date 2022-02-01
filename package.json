@@ -26,6 +26,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    
+      "build": "next build",
+      "start": "next start",
+      "export": "next export",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
