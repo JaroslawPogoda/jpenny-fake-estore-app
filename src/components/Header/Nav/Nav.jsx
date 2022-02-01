@@ -36,7 +36,7 @@ export default function Nav(props) {
             <span className="icon-bar">
               <MdOutlineProductionQuantityLimits/>
             </span>
-            <span className="text">Home</span>
+            <span className="text">Products</span>
           </li>
         </NavLink>
         <NavLink to="register" className="navLink" activeClassName="active">

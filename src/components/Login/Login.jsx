@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState,useEffect, useContext } from "react";
 import { UserContext } from "../Layout";
 import signIn from "../../functions/signIn";
 import { CartStateContext } from "../Layout";
@@ -13,7 +13,7 @@ export default function Register(props) {
 
   const [submitted, setSubmitted] = useState(false);
   const [token, setToken] = useState(null);
-  console.log(user);
+  
   const [user1, setUser1] = useState({
     email: "",
     email_verified: false,
@@ -26,20 +26,31 @@ export default function Register(props) {
       "https://lh3.googleusercontent.com/a-/AOh14GisXeDFX6_Ai8FdT-vj8_OE665Ff-VzYuC-OS_1uA=s96-c",
     sub: "google-oauth2|116863707328513454281asdasd",
   });
-
-  user ? valueUser.setUser(user) : valueUser.setUser(null);
-  user1.email_verified ? valueUser.setUser(user) : valueUser.setUser(null);
+  const updateBoth =()=>{
+    //value.dispatchCart({type:"UPDATE_TOKEN",payload:user.sub})
+    valueUser.setUser(user)}
+    const doNotThing=()=>{
+      return false
+    }
+ useEffect(()=>{user?value.dispatchCart({type:"UPDATE_TOKEN",payload:{token:user.sub}}):console.log("here")
+  console.log(value)},[])
+  user ?  updateBoth(): doNotThing();
+ 
+ // user ? value.dispatchCart({type:"UPDATE_TOKEN",payload:user.sub}) : console.log("User-cart");
+  user1.email_verified ? valueUser.setUser(user1) : doNotThing();
   const handleSubmit = (event) => {
     event.preventDefault();
     signIn(user1, setToken, value.dispatchCart);
     setUser1({ ...user1, email_verified: true })
     setSubmitted(true);
   };
+
   const handleChange = (event) => {
     setUser1({ ...user1, [event.target.name]: event.target.value });
   };
   return (
     <div>
+      
       {submitted ? (
         <div>
           <h1> Welcome</h1>
@@ -72,10 +83,12 @@ export default function Register(props) {
 
             <button type="submit">Register</button>
           </form>
+          <div>
+          {user1.email_verified ? null : <LoginAuth0Button />}
+          {user ? <LogoutAuth0Button user1={user1}setUser1={setUser1}/> : null}
+        </div>
         </div>
       )}
-      {user1.email_verified ? null : <LoginAuth0Button />}
-      {user ? <LogoutAuth0Button user1={user1}setUser1={setUser1}/> : null}
     </div>
   );
 }

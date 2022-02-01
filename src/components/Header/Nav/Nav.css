@@ -74,7 +74,7 @@
     z-index:4 ;
     transition: all 300ms;
     box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
-    margin-right:200px;
+    margin-right:300px;
 }
 .navigation ul .indicator .indicator-block{
     width:100px;
@@ -89,16 +89,16 @@ nav ul a:nth-child(1).active ~ .indicator{
     transform: translateX(calc(70px*0))
 }
 nav ul a:nth-child(2).active ~ .indicator{
-    transform: translateX(calc(70px*1))
+    transform: translateX(calc(80px*1))
 }
 nav ul a:nth-child(3).active ~ .indicator{
-    transform: translateX(calc(70px*2))
+    transform: translateX(calc(80px*2))
 }  
 nav ul a:nth-child(4).active ~ .indicator{
-    transform: translateX(calc(70px*3))
+    transform: translateX(calc(80px*3))
 }  
 nav ul a:nth-child(5).active ~ .indicator{
-    transform: translateX(calc(70px*4))
+    transform: translateX(calc(80px*4))
 }   
   
 

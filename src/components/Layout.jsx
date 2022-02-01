@@ -12,7 +12,7 @@ import Checkout from './Checkout/Checkout'
 //import getDataAllProductShopAPI from '../functions/getDataAllProducts-shop-api'
 import './Layout.css'
 import { useAuth0 } from "@auth0/auth0-react";
-import Profile from "./Profile/Profile";
+import Profile from './Profile/Profile';
 import Error from "./Error/Error";
 export const UserContext = createContext()
 export const CatContext= React.createContext();
