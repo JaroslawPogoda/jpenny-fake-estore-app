@@ -1,77 +1,81 @@
-import React,{useState,useContext} from "react";
-
-import signIn from '../../functions/signIn'
-import {CartStateContext} from '../Layout'
-
-
-
-
-
+import React, { useState, useContext } from "react";
+import { UserContext } from "../Layout";
+import signIn from "../../functions/signIn";
+import { CartStateContext } from "../Layout";
+import { useAuth0 } from "@auth0/auth0-react";
+import LoginAuth0Button from "./LoginAuth0Button/LoginAuth0Button";
+import LogoutAuth0Button from "./LogoutAuth0Button/LogoutAuth0Button";
 
 export default function Register(props) {
-const value= useContext(CartStateContext)
+  const value = useContext(CartStateContext);
+  const valueUser = useContext(UserContext);
+  const { user } = useAuth0();
 
-    const [submitted,setSubmitted]=useState(false)
-    const [token,setToken]=useState(null);
-  const [user, setUser] = useState({
+  const [submitted, setSubmitted] = useState(false);
+  const [token, setToken] = useState(null);
+  console.log(user);
+  const [user1, setUser1] = useState({
     email: "",
-    userName: "",
-    password: "",
-    firstName: "",
-    lastName: "",
-    city: "",
-    street: "",
-    number: "",
-    zipcode: "",
-    phone: "",
-    password_confirmation: "",
+    email_verified: false,
+    family_name: "Pgda",
+    given_name: "Jrslw",
+    locale: "en",
+    name: "Jrslw Pgd",
+    nickname: "jrk10",
+    picture:
+      "https://lh3.googleusercontent.com/a-/AOh14GisXeDFX6_Ai8FdT-vj8_OE665Ff-VzYuC-OS_1uA=s96-c",
+    sub: "google-oauth2|116863707328513454281asdasd",
   });
-  
-const  handleSubmit =  (event) => {
-    event.preventDefault()
-   signIn(
-      user,
-      setToken,
-      value.dispatchCart
-    );
-    
-    setSubmitted(true)
+
+  user ? valueUser.setUser(user) : valueUser.setUser(null);
+  user1.email_verified ? valueUser.setUser(user) : valueUser.setUser(null);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    signIn(user1, setToken, value.dispatchCart);
+    setUser1({ ...user1, email_verified: true })
+    setSubmitted(true);
   };
   const handleChange = (event) => {
-      setUser({...user,[event.target.name]: event.target.value})
-  }
+    setUser1({ ...user1, [event.target.name]: event.target.value });
+  };
   return (
-      <div>
-    {submitted?<div><h1> Welcome</h1></div>:<div className="Register">
-    
-        <h2>login</h2>
-      <form className="RegisterForm" onSubmit={handleSubmit}>
-          <label htmlFor='email'>Email:</label>
-        <input
-        id="email"
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={user.email}
-          onChange={handleChange}
-          required
-/>
- 
-        <label htmlFor='password'>Password:</label>
-        <input
-        id="password"
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={user.password}
-          onChange={handleChange}
-          required
-        />
+    <div>
+      {submitted ? (
+        <div>
+          <h1> Welcome</h1>
+        </div>
+      ) : (
+        <div className="Register">
+          <h2>login</h2>
+          <form className="RegisterForm" onSubmit={handleSubmit}>
+            <label htmlFor="email">Email:</label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={user1.email}
+              onChange={handleChange}
+              required
+            />
 
+            <label htmlFor="password">Password:</label>
+            <input
+              id="password"
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={user1.password}
+              onChange={handleChange}
+              required
+            />
 
-        <button type="submit">Register</button>
-      </form>
-    </div>}
+            <button type="submit">Register</button>
+          </form>
+        </div>
+      )}
+      {user1.email_verified ? null : <LoginAuth0Button />}
+      {user ? <LogoutAuth0Button user1={user1}setUser1={setUser1}/> : null}
     </div>
   );
 }

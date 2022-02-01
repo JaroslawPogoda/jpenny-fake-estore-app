@@ -2,6 +2,7 @@ import React from "react";
 import {SiGnuprivacyguard } from 'react-icons/si'
 import { NavLink } from "react-router-dom";
 import {MdOutlineLogin,MdOutlineHome,MdOutlineProductionQuantityLimits} from 'react-icons/md'
+import {CgProfile} from 'react-icons/cg'
 import styled from 'styled-components'
 import './Nav.css'
 
@@ -52,6 +53,14 @@ export default function Nav(props) {
             <MdOutlineLogin/>
           </span>
             <span className="text">login</span>
+          </li>
+        </NavLink>
+        <NavLink to="profile" className="navLink" activeClassName="active">
+          <li className="list">
+          <span className="icon-bar">
+            <CgProfile/>
+          </span>
+            <span className="text">Profile</span>
           </li>
         </NavLink>
         <div className="indicator">

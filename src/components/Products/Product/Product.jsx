@@ -44,7 +44,7 @@ export default function Product(props) {
   const openShowPopOut = () =>{
     setShowPopOut(!showPopOut)
   }
-  console.log(props.product)
+  
   return (
 <Container>
 <ProductButton onClick={openShowPopOut}>

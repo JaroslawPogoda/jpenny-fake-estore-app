@@ -1,15 +1,22 @@
 import axios from 'axios'
+const SerpApi = require('google-search-results-nodejs');
 
 
-export default function getDataAllProduct(setAllProducts){
-    let unmodifiedData=null
-    const urlAllProducts='http://api.fakeshop-api.com/products/getAllProducts'
-    axios({
-        method: 'get',
-        url: urlAllProducts,
-        responseType: 'stream'
-      })
-        .then(response => console.log(response))//setAllProducts(response.data))
-        .catch(error => console.error(error))
-        .finally(() => console.log('done'));
+export default function getDataAllProductShopAPI(setAllProducts){
+  
+  const search = new SerpApi.GoogleSearch("secret_api_key");
+  
+  const params = {
+    engine: "google_product",
+    product_id: "4172129135583325756",
+    gl: "us",
+    hl: "en"
+  };
+  
+  const callback = function(data) {
+    console.log(data['product_results']);
+  };
+  
+  // Show result as JSON
+  search.json(params, callback);
 }
