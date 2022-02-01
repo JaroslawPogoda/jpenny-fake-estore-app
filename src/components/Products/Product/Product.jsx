@@ -1,8 +1,12 @@
+//@Objective : product component
+//import
 import React, {useState} from "react";
 import "./Product.css";
 import styled from 'styled-components'
 import { ProdPopOut } from "./ProdPopOut/ProdPopOut";
 import { GlobalStyle } from "../../../globalStyle/globalStyled";
+//end of Imports
+//styled component Container
 const Container = styled.div`
 display:flex;
 height:25vh;
@@ -14,7 +18,7 @@ margin-top:1%;
 padding:16px 32px;
 
 `;
-
+//styled component productButton
 const ProductButton = styled.div`
 min-width:100px;
 padding: 16px 32px;
@@ -38,13 +42,16 @@ transition: 0.5s;
 }
 `;
 
-
+//declaration of the component Product
+//@params props: product
 export default function Product(props) {
+  //declaration and initialization of  state
   const [showPopOut,setShowPopOut] = useState(false)
+  //function openShowPopOut
   const openShowPopOut = () =>{
     setShowPopOut(!showPopOut)
   }
-  
+  //retrun
   return (
 <Container>
 <ProductButton onClick={openShowPopOut}>
@@ -63,5 +70,5 @@ export default function Product(props) {
     <ProdPopOut showPopOut={showPopOut} setShowPopOut={setShowPopOut} product={props.product}/>
     <GlobalStyle />
     </Container>
-  );
-}
+  );//end of return
+}//end of declaration component

@@ -1,6 +1,9 @@
+//imports
 import React from "react";
-
+//end of imports
+//declaration of PaymentInputs component
 export default function PaymentInputs() {
+  //return
   return (
     <div>
       <label htmlFor="ccn">Credit Card Number:</label>
@@ -45,5 +48,5 @@ export default function PaymentInputs() {
         maxLength="4"
       />
     </div>
-  );
-}
+  );//end of return
+}//end of component

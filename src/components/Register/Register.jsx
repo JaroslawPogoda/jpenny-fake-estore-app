@@ -1,12 +1,17 @@
+//@Objective: Register page
+//imports
 import React,{useState,useContext} from "react";
 import createUser from "../../functions/createUser";
 import './Register.css'
 import {CartStateContext} from '../Layout'
-
+//end of imports
+//declaration of component
 export default function Register(props) {
+  //value form context CartStateContext cart and dispatchCart
   const value= useContext(CartStateContext)
+  //submited state
     const [submitted,setSubmitted]=useState(false)
-    
+    //user state declaration
       const [user, setUser] = useState({
     email: "",
     userName: "",
@@ -20,6 +25,7 @@ export default function Register(props) {
     phone: "",
     password_confirmation: "",
   });
+  //handle submit declaration
   const handleSubmit = (event) => {
     event.preventDefault()
     createUser(
@@ -29,9 +35,11 @@ export default function Register(props) {
     );
     setSubmitted(true)
   };
+  //handlechange declaration
   const handleChange = (event) => {
       setUser({...user,[event.target.name]: event.target.value})
   }
+  //return
   return (
       <div>
     {submitted?<div><h1>Thank you and Welcome</h1></div>:<div className="Register">
@@ -152,5 +160,5 @@ export default function Register(props) {
       </form>
     </div>}
     </div>
-  );
-}
+  );//end of return
+}//end of component definition

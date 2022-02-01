@@ -1,3 +1,4 @@
+//imports
 import React from "react";
 import {SiGnuprivacyguard } from 'react-icons/si'
 import { NavLink } from "react-router-dom";
@@ -5,7 +6,7 @@ import {MdOutlineLogin,MdOutlineHome,MdOutlineProductionQuantityLimits} from 're
 import {CgProfile} from 'react-icons/cg'
 
 import './Nav.css'
-
+//end of imports
 //creating constant variable
 //creating active animation
 // function activeLink() {
@@ -17,9 +18,10 @@ import './Nav.css'
 //   let navContainer = document.querySelector("header");
 //   navContainer.classList.toggle("scrolling-active", window.scrollY > 1);
 // });
-
+// declaration of Nav Component
+//@params props: totalQuantity, setTotalQuantity, hideCart, setHideCart
 export default function Nav(props) {
-  
+  //return
   return (
     <nav id="nav" className="navigation" role="navigation">
       <ul className="nav-ul">
@@ -68,5 +70,5 @@ export default function Nav(props) {
         </div>
       </ul>
     </nav>
-  );
-}
+  );//end of navigation
+}//end of component

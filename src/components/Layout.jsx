@@ -1,3 +1,5 @@
+//@Objective Bridging all components and context data and states together
+//imports
 import React,{useState,useEffect,useReducer,createContext} from "react";
 import {  Route, Routes } from "react-router-dom";
 import Products from "./Products/Products";
@@ -14,11 +16,13 @@ import './Layout.css'
 
 import Profile from './Profile/Profile';
 import Error from "./Error/Error";
+//end of Imports
+//exports
 export const UserContext = createContext()
 export const CatContext= React.createContext();
 export const CartStateContext = createContext()
 export const CartDispatchContext = createContext()
-
+//end of exports
 export default function Layout(props) {
   const [user3,setUser]= useState({})
   const [allProducts, setAllProducts] = useState([]);

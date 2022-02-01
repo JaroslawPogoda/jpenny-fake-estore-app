@@ -1,7 +1,11 @@
+//import 
 import React from 'react';
 import './CheckoutProduct.css'
+//end of import
+//declaration of component Checkout Product
+//@params props: product
 function CheckoutProduct(props) {
-
+//return
  return (<div className="checkout-product">
     <img className="product-img" src  = {props.product.image} alt={props.product.title}/>
    <div className="checkout-product-detail">
@@ -10,6 +14,6 @@ function CheckoutProduct(props) {
     <h4 className="checkout-quantity">Quantity:{props.product.quantity}</h4>
     </div>
   </div>);
-}
+}//end of return
 
 export default CheckoutProduct;

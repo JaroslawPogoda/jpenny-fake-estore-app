@@ -1,9 +1,12 @@
+//@OBjective: Popout component with more information and buttons 
+//import
 import React,{useContext, useState} from "react";
 import styled from "styled-components";
 import{ MdClose} from 'react-icons/md'
 
 import {CartStateContext} from '../../../Layout'
-
+//end of import
+//styled components Background
 const Background = styled.div`
   width: 100%;
   heights: 100%;
@@ -13,6 +16,7 @@ const Background = styled.div`
   justify-content: center;
   aligh-item: center;
 `;
+//Styled component ProductsWrapper
 const ProductsWrapper = styled.div`
   padding:20px 10px 20px 10px;
   width: 800px;
@@ -26,6 +30,7 @@ const ProductsWrapper = styled.div`
   z-index: 10;
   border-radius: 10px;
 `;
+// styled img component ProductImg
 const ProductImg = styled.img`
   width: 300px;
   height: 460px;
@@ -33,6 +38,7 @@ const ProductImg = styled.img`
   background: #000;
   object-fit: cover;
 `;
+//styled productContent component
 const ProductContent = styled.div`
   display: flex;
   flex-direction: column;
@@ -50,6 +56,7 @@ const ProductContent = styled.div`
     border: none;
   }
 `;
+//styled CloseButton
 const CloseProductButton = styled(MdClose)`
   cursor: pointer;
   position: absolute;
@@ -59,18 +66,28 @@ const CloseProductButton = styled(MdClose)`
   height: 32px;
   padding: 0;
   z-index: 10;
+  transition:all 300ms;
+  &:hover {
+    transform: scale(1.07);
+    transition:all 300ms;
+    color:#020510;
+  }
 `;
-
+//declaration of popout componendt
 export const ProdPopOut = (props) => {
+  //value form context CartStateContext cart dispatchCart
   const value= useContext(CartStateContext)
+  //Quantity
   const [quantity,setQuantity] = useState(1)
+  //add To cart function
   const handleAddToCart =(event)=>{
     value.dispatchCart({type: 'ADD',payload:{product:props.product,quantity}})
   }
+  //changeQuantitiy finction
   const handleselectProductquantity= (event)=>{
     setQuantity(event.target.value)
-    console.log("this be a value" +event.target.value)
   }
+  //return 
   return (
     <>
       {props.showPopOut ? (
@@ -105,5 +122,5 @@ export const ProdPopOut = (props) => {
       ) : null}
       ;
     </>
-  );
-};
+  );//end of return
+};//end of function
