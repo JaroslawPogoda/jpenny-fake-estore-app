@@ -1,4 +1,4 @@
-import React,{useState,useEffect,useReducer,createContext,useContext} from "react";
+import React,{useState,useEffect,useReducer,createContext} from "react";
 import {  Route, Routes } from "react-router-dom";
 import Products from "./Products/Products";
 import getDataAllProducts from '../functions/getDataAllProducts'
@@ -11,7 +11,7 @@ import cartReducer from "../functions/cartReducer";
 import Checkout from './Checkout/Checkout'
 //import getDataAllProductShopAPI from '../functions/getDataAllProducts-shop-api'
 import './Layout.css'
-import { useAuth0 } from "@auth0/auth0-react";
+
 import Profile from './Profile/Profile';
 import Error from "./Error/Error";
 export const UserContext = createContext()
@@ -24,7 +24,7 @@ export default function Layout(props) {
   const [allProducts, setAllProducts] = useState([]);
   const [categories, setAllCategory] = useState([])
   const [cart,dispatchCart]=useReducer(cartReducer,{products:[],userToken:null});
-  const { user } = useAuth0();
+  
   useEffect(() => {
     getDataAllProducts(setAllProducts);
     getDataAllCategory(setAllCategory);

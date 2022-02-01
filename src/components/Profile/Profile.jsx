@@ -8,7 +8,7 @@ function Profile() {
     user?value.setUser(user):console.log(value)
   return <div className="profile">
       {value.user.name?<div className="profile-items">
-      <img src={value.user.picture} alt={"profile Picture"}/>
+      <img src={value.user.picture} alt={"profile"}/>
       <h2>Name:{value.user.name}</h2>
       </div>:null}
   </div>;

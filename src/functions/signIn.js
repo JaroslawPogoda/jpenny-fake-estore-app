@@ -3,8 +3,7 @@ import axios from 'axios'
 export default function signIn(user,setToken,dispatchCart) {
  
   console.log(user)
-  let email=user.email
-  let password=user.password
+  
   axios.post('https://fakestoreapi.com/auth/login',{
       username: "mor_2314",
       password: "83r5^_"

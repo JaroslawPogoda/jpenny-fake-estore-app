@@ -3,7 +3,7 @@ import {SiGnuprivacyguard } from 'react-icons/si'
 import { NavLink } from "react-router-dom";
 import {MdOutlineLogin,MdOutlineHome,MdOutlineProductionQuantityLimits} from 'react-icons/md'
 import {CgProfile} from 'react-icons/cg'
-import styled from 'styled-components'
+
 import './Nav.css'
 
 //creating constant variable

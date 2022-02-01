@@ -6,7 +6,7 @@ import {CartStateContext} from '../Layout'
 export default function Register(props) {
   const value= useContext(CartStateContext)
     const [submitted,setSubmitted]=useState(false)
-    const [token,setToken]=useState(null);
+    
       const [user, setUser] = useState({
     email: "",
     userName: "",

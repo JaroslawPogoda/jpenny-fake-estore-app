@@ -1,7 +1,7 @@
 import React,{useContext, useState} from "react";
 import styled from "styled-components";
 import{ MdClose} from 'react-icons/md'
-import addToCart from "../../../../functions/addToCart";
+
 import {CartStateContext} from '../../../Layout'
 
 const Background = styled.div`

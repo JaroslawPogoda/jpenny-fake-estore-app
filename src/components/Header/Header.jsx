@@ -12,7 +12,7 @@ export default function Header(props) {
     <div className="Header">
       <Nav />
       <div className="cart-icon">
-      {value.cart.token?hideCart?<CartIcon totalQuantity={totalQuantity} hideCart={hideCart} setHideCart={setHideCart}/>:<Cart setHideCart={setHideCart}/>:null}
+      {value.cart.token?hideCart?<CartIcon setTotalQuantity={setTotalQuantity} totalQuantity={totalQuantity} hideCart={hideCart} setHideCart={setHideCart}/>:<Cart setHideCart={setHideCart}/>:null}
       </div>
     </div>
   );

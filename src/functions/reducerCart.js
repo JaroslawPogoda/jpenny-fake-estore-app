@@ -27,8 +27,9 @@ const setCartLS = (payload) => {
         }
         setCartLS(state)
         return state
+        break
       case 'REMOVE_FROM_CART':
-        let items = []
+        {let items = []
         state.forEach(el => {
           if (el.id !== action.payload) {
             items = [...items, el]
@@ -36,8 +37,9 @@ const setCartLS = (payload) => {
         })
         setCartLS(items)
         return items
+        break;}
       case 'INCREASE_QTY':
-        const new_state = state.map(el => {
+        {const new_state = state.map(el => {
           if (el.id === action.payload) {
             el.quantity = el.quantity + 1
           }
@@ -45,8 +47,9 @@ const setCartLS = (payload) => {
         })
         setCartLS(new_state)
         return new_state
+        break;}
       case 'DECREASE_QTY':
-        const newState = state.map(el => {
+        {const newState = state.map(el => {
           if (el.id === action.payload) {
             el.quantity = el.quantity > 1 ? el.quantity - 1 : 1
           }
@@ -54,6 +57,8 @@ const setCartLS = (payload) => {
         })
         setCartLS(newState)
         return newState
+      break;}
+        
       case 'CLEAR':
         state = []
         removeCartLS()
@@ -63,6 +68,8 @@ const setCartLS = (payload) => {
         return state
       default:
         throw new Error(`Unknown action: ${action.type}`)
+        break;
     }
+    return false;
   }
   

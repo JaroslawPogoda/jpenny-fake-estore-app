@@ -6,7 +6,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import LoginAuth0Button from "./LoginAuth0Button/LoginAuth0Button";
 import LogoutAuth0Button from "./LogoutAuth0Button/LogoutAuth0Button";
 import './Login.css'
-export default function Register(props) {
+export default function Register() {
   const value = useContext(CartStateContext);
   const valueUser = useContext(UserContext);
   const { user } = useAuth0();
@@ -30,24 +30,24 @@ export default function Register(props) {
     //value.dispatchCart({type:"UPDATE_TOKEN",payload:user.sub})
     valueUser.setUser(user)}
     const doNotThing=()=>{
+      console.log("token" +token)
       return false
     }
- useEffect(()=>{user?value.dispatchCart({type:"UPDATE_TOKEN",payload:{token:user.sub}}):console.log("here")
-  console.log(value)},[])
-  user ?  updateBoth(): doNotThing();
- 
- // user ? value.dispatchCart({type:"UPDATE_TOKEN",payload:user.sub}) : console.log("User-cart");
-  user1.email_verified ? valueUser.setUser(user1) : doNotThing();
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    signIn(user1, setToken, value.dispatchCart);
-    setUser1({ ...user1, email_verified: true })
-    setSubmitted(true);
-  };
-
-  const handleChange = (event) => {
-    setUser1({ ...user1, [event.target.name]: event.target.value });
-  };
+    user ?  updateBoth(): doNotThing();
+    
+    // user ? value.dispatchCart({type:"UPDATE_TOKEN",payload:user.sub}) : console.log("User-cart");
+    user1.email_verified ? valueUser.setUser(user1) : doNotThing();
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      signIn(user1, setToken, value.dispatchCart);
+      setUser1({ ...user1, email_verified: true })
+      setSubmitted(true);
+    };
+    
+    const handleChange = (event) => {
+      setUser1({ ...user1, [event.target.name]: event.target.value });
+    };
+    useEffect(()=>{user?value.dispatchCart({type:"UPDATE_TOKEN",payload:{token:user.sub}}):doNotThing()},[])
   return (
     <div className="login">
       

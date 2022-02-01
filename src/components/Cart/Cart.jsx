@@ -17,7 +17,7 @@ function Cart(props) {
       <MdClose className="cart-close" onClick={handleCloseCart}/>
       {console.log(value)}
         {value.cart.products.map((product,index) =>{
-          {total+=(product.price*product.quantity)} 
+          total+=(product.price*product.quantity) 
         return <CartProduct product={product} index={index} key={index} dispatchCart={value.dispatchCart}/> })}
         <p>Total:${Math.round(total * 100) / 100}</p>
         <Link to={'checkout'}><button><MdPayment/>Checkout</button></Link>
