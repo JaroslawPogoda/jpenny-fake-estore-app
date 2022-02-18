@@ -5,6 +5,8 @@ for this project I will be using 3 API's:
 - fake shop API https://www.fakeshop-api.com/
 - Auth0 authentication API https://auth0.com/docs/api
 
+## Hosted:
+Netlify: https://frosty-tereshkova-a1594c.netlify.app/
 ## Objective:
 
 purpose of this app is to test my abilities to create responsive web app using api that provides fake internet store data about products cart prices.
